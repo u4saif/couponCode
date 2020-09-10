@@ -1,0 +1,118 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#tnc{
+    margin: 10px;
+    padding: 5px;
+    width: 80%;
+}
+input{
+    width:auto;
+    height: 28px;
+    margin: 10px;
+    padding: 5px;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-bottom-color: darkgray;
+    outline-style: none;
+}
+
+select{
+    width:auto;
+    height: 28px;
+    margin: 10px;
+    padding: 5px;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-bottom-color: darkgray;
+    border-bottom-width: 2px;
+    outline-style: none;
+}
+
+button{
+    width:100px;
+    margin-top: 3px;
+    margin-bottom: 3em;
+    margin-left: 2em;
+    padding: 5px;
+    font: bolder;
+    color: white;
+    background-color: rgba(16, 16, 241, 0.9);
+    border-radius: 1em;
+}
+
+h2{
+    margin-left: 2em;
+    font-size: 28px;
+    margin-top: 10px;
+    padding: 5px;
+    
+}
+h3{
+    margin-left: 2em;
+    margin-right: 2em;
+    font-size: 17px;
+    margin-top: 10px;
+    padding: 5px;
+    border:2px dotted dodgerblue;
+    background-color: rgb(112, 184, 255,.4);
+    color: #333333;
+    font: bolder;
+    
+}
+h1{
+    margin-left: 2em;
+    margin-right: 2em;
+    font-size: 28px;
+    margin-top: 10px;
+    padding: 5px;
+    color: #333333;
+    font-weight:bolder ;
+    text-align: center;
+}
+.heading{
+    font-size: 22px;
+    padding: 5px;
+    background-color: rgb(66, 66, 156,.7);
+    color: white;
+    border-radius: 4px;
+
+}
+
+.container{
+    margin: 2em;
+    border:2px solid #333333 ;
+    border-radius: 5px;
+    display: inline-block;
+    width: 60%;
+
+}
+
+label{
+    font-size: 28px;
+    margin: 20px;
+    padding: 5px;
+}
+
+#lable-unlimited{
+    margin: 10px;
+    font-size: 12px;
+
+}
+
+hr{
+    width: 100%;
+}
+.invalid{
+    color: red;
+    width: fit-content;
+    padding: 0px;
+    margin-left: 1em;
+    margin-top: 0px;
+
+}

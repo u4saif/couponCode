@@ -1,0 +1,86 @@
+<h1>Generate Coupons</h1>
+<!--Desired Out Put-->
+<h3> Output: <br>{{f.value | json}}</h3>
+
+<!--Coupon basic details-->
+<form  #f="ngForm" (ngSubmit)='check(f)'>
+    <div class="container">
+
+    <select name="couponType" id="couponType" ngModel #couponType='ngModel'>
+        <option value="" disabled selected hidden>Coupon Type*</option>
+        <option value="User">User</option>
+        <option value="Non-User">Non-User</option>
+    </select>
+    <div class="invalid" *ngIf='couponType.touched && !couponType.value'>It is required</div>
+    <br>
+
+    <input type="text" placeholder="Coupon Code*" name="code" ngModel #code='ngModel'>
+    <div class="invalid"  *ngIf='code.touched && !code.value'> It is required</div>
+    <br>
+    <input matInput [matDatepicker]="picker" name='valid_from' ngModel #valid_from='ngModel' placeholder="Start Date*" required>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <div class="invalid"  *ngIf='valid_from.touched && !valid_from.value'> It is required</div>
+
+
+    <input matInput [matDatepicker]="picker2"  name='valid_to' ngModel #valid_to='ngModel'>
+    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker #picker2></mat-datepicker>
+    <div class="invalid"  *ngIf='valid_to.touched && !valid_to.value'> It is required</div>
+
+    <br>
+    <label for="is_unlimited" id="lable-unlimited">Coupon Availiblity*</label> <br>
+    <select name="is_unlimited" id="is_unlimited" ngModel #is_unlimited='ngModel' >
+        <option value="" disabled selected hidden>Chose Availiblity* </option>
+        <option value="True">Unlimited</option>
+        <option value="False">Not-Unlimited</option>
+    </select>
+    <input type="number" placeholder='Coupon Count*' 
+     *ngIf=' is_unlimited.touched && is_unlimited.value =="False"' 
+        ngModel name="couponCount" #couponCount='ngModel' required>
+     
+    <br>
+    <textarea name="tnc" id="tnc" cols="38" rows="3" 
+    placeholder="Type Something here" ngModel name="tnc" #tnc=ngModel></textarea>
+   
+    <br>
+
+    <select name="couponStatus" id="couponStatus" ngModel #couponStatus='ngModel'>
+        <option value="" disabled selected hidden>Coupon Status</option>
+        <option value="Active">Active</option>
+        <option value="Not-Active">Not-Active</option>
+    </select>
+    <div class="invalid"  *ngIf='couponStatus.touched && !couponStatus.value'> It is required</div>
+</div>
+
+<!--  Creating Rule for Coupon -->
+<h2>COUPON RULES</h2>
+<hr>
+<div ngModelGroup='rules'>
+    <div class="container" >
+        <div class="heading">Rules</div>
+        <input type="number" name="min_amt" id="min_amt" placeholder="Min Amount*"
+           ngModel #min_amt='ngModel' required>     <div class="invalid"  *ngIf='min_amt.touched && !min_amt.value'> It is required</div>
+    
+        <input type="number" name="max_amt" id="max_amt" placeholder="Max Amount"
+            ngModel #max_amt='ngModel'>
+        <br>
+    
+        <select name="discountType" id="discountType"   ngModel #discountType='ngModel'>
+            <option value="" disabled selected hidden>Discount Type</option>
+            <option value="per">Percentage</option>
+            <option value="frac">Fraction</option>
+        </select>
+    
+        <input type="number" name="discount_amt" id="discount_amt" placeholder="Discount Amount" ngModel #discount_amt='ngModel'>
+        <br>
+    
+        <input type="number" name="max_dis_amt" id="max_dis_amt" placeholder="Max Discount Amount"   ngModel #max_dis_amt='ngModel'>
+    </div>
+    <br>
+    <button type="submit">Submit</button>
+
+</div>
+
+</form>
+ 
